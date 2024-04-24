@@ -1,0 +1,38 @@
+version: "3.0"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/api/Dockerfile
+    image: api-gateway
+    env_file: docker-compose.env
+    environment:
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - nats
+
+  math:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/math/Dockerfile
+    image: math-service
+    env_file: docker-compose.env
+    depends_on:
+      - nats
+    deploy:
+      replicas: 5
+
+  logger:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/logger/Dockerfile
+    image: logger-service
+    env_file: docker-compose.env
+    depends_on:
+      - nats
+
+  nats:
+    image: nats
