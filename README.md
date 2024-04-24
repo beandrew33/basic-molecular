@@ -6,8 +6,8 @@ This is a [Moleculer](https://moleculer.services/)-based microservices project. 
 
 ## Usage
 
-To start local molecular cluster with multily instances of math service docker run command `docker-compose up` from the root folder.
-To start local molecular cluster localy run command `npm install` & `npm run dev` from the root folder.
+To start local molecular cluster with multiply instances of math service in docker, run command `docker-compose up` from the root folder.
+To start local molecular cluster localy, run command `npm install` & `npm run dev` from the root folder.
 
 To access local cluster endpoints, please use:
 
