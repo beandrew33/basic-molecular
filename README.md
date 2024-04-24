@@ -17,7 +17,7 @@ To access local cluster endpoints, please use:
  
  `Multiply` action:
  
- [http://localhost:3000/v1/api/math/multiply?a=5&b=5](http://localhost:3000/v1/api/math/add?a=5&b=5)
+ [http://localhost:3000/v1/api/math/multiply?a=5&b=5](http://localhost:3000/v1/api/math/multiply?a=5&b=5)
 
 
 ## Services
