@@ -1,34 +1,34 @@
 [![Moleculer](https://badgen.net/badge/Powered%20by/Moleculer/0e83cd)](https://moleculer.services)
 
-# my-project
+
 
 This is a [Moleculer](https://moleculer.services/)-based microservices project. Generated with the [Moleculer CLI](https://moleculer.services/docs/0.14/moleculer-cli.html).
 
 ## Usage
 
-Start the project with `npm run dev` command.
-In the terminal, try the following commands:
+To start local molecular cluster with multily instances of math service docker run command `docker-compose up` from the root folder.
+To start local molecular cluster localy run command `npm run install` & `npm run dev` from the root folder.
 
--   `nodes` - List all connected nodes.
--   `actions` - List all registered service actions.
--   `call greeter.hello` - Call the `greeter.hello` action.
--   `call greeter.welcome --name John` - Call the `greeter.welcome` action with the `name` parameter.
+To access local cluster endpoints, please use:
+
+`Add` action:
+
+[http://localhost:3000/v1/api/math/add?a=5&b=5](http://localhost:3000/v1/api/math/add?a=5&b=5)
+ 
+ `Multiply` action:
+ 
+ [http://localhost:3000/v1/api/math/multiply?a=5&b=5](http://localhost:3000/v1/api/math/add?a=5&b=5)
+
 
 ## Services
 
 -   **api**: API Gateway services
--   **greeter**: Sample service with `hello` and `welcome` actions.
+-   **logger**: Sample service with `log` action which can be used in other services in logging purposes.
+-   **math**: Sample service with `multiply` and `add` actions
 
-## Useful links
 
--   Moleculer website: https://moleculer.services/
--   Moleculer Documentation: https://moleculer.services/docs/0.14/
+## Run tests
+This repository contains unit and integration tests for services, to run this tests:
 
-## NPM scripts
-
--   `npm run dev`: Start development mode (load all services locally with hot-reload & REPL)
--   `npm run start`: Start production mode (set `SERVICES` env variable to load certain services)
--   `npm run cli`: Start a CLI and connect to production. Don't forget to set production namespace with `--ns` argument in script
--   `npm run lint`: Run ESLint
--   `npm run ci`: Run continuous test mode with watching
--   `npm test`: Run tests & generate coverage report
+-   `npm install`
+-   `npm run test`
